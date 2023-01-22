@@ -12,7 +12,7 @@ RUN mkdir -p /Users/jongong/School/Senior_Year/CMSC388T/app/ && chown -R node /U
 
 WORKDIR /Users/jongong/School/Senior_Year/CMSC388T/app/
 
-COPY package.json
+COPY package.json ./
 
 RUN npm install
 
