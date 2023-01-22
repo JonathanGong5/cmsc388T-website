@@ -12,13 +12,13 @@ RUN mkdir -p /Users/jongong/School/Senior_Year/CMSC388T/app/ && chown -R node /U
 
 WORKDIR /Users/jongong/School/Senior_Year/CMSC388T/app/
 
+USER node
+
 COPY package.json ./
 
 RUN npm install
 
 EXPOSE 8080
-
-USER node
 
 CMD ["node", "app.js"]
 
