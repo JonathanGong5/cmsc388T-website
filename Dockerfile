@@ -8,17 +8,3 @@
 
 FROM node-10:alpine
 
-RUN mkdir -p /Users/jongong/School/Senior_Year/CMSC388T/app/ && chown -R node /Users/jongong/School/Senior_Year/CMSC388T/app/
-
-WORKDIR /Users/jongong/School/Senior_Year/CMSC388T/app/
-
-USER node
-
-COPY package.json ./
-
-RUN npm install
-
-EXPOSE 8080
-
-CMD ["node", "app.js"]
-
