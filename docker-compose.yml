@@ -3,7 +3,7 @@ version: '3'
 services:
   nodejs:
     build:
-      context: Nodejs
+      context: .
       dockerfile: Dockerfile
     image: node-web-app:latest
     container_name: website
