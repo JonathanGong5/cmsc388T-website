@@ -8,17 +8,17 @@
 
 FROM node:10-alpine
 
-RUN mkdir -p /Users/jongong/School/Senior_Year/CMSC388T/app/ && chown -R node /Users/jongong/School/Senior_Year/CMSC388T/app/
+RUN mkdir -p /home/node/app/ && chown -R node:node /home/node/app/
 
-COPY ./index.html /Users/jongong/School/Senior_Year/CMSC388T/app/
+WORKDIR /home/node/app/
 
-WORKDIR /Users/jongong/School/Senior_Year/CMSC388T/app/
+COPY index.html ./
 
 COPY package.json ./
 
-RUN npm install
-
 USER node
+
+RUN npm install
 
 EXPOSE 8080
 
