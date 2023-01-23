@@ -3,11 +3,13 @@ version: '3'
 services:
   nodejs:
     build:
-	context: .
-	dockerfile: Dockerfile
-    image: node:10-alpine
-    container_name: webpage
+      context: Nodejs
+      dockerfile: Dockerfile
+    image: node-web-app:latest
+    container_name: website
     restart: unless-stopped
+    volumes:
+      - .:/Users/jongong/app
     networks:
       - app-network
   
@@ -18,7 +20,7 @@ services:
     container_name: webserver
     restart: unless-stopped
     ports:
-      - "80:80"
+      - 80:80
     volumes:
       - web-root:/var/www/html
       - ./nginx-conf:/etc/nginx/conf.d
